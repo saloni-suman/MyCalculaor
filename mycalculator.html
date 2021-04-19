@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>MY CALCULATOR</title>
+<script>
+
+	function equal(){
+		var exp=document.form.textview.value;
+		if(exp){
+			document.form.textview.value=eval(exp);
+			}
+	}
+	function clean(){
+		document.form.textview.value="";
+	}
+	function back(){
+		var exp=document.form.textview.value;
+		document.form.textview.value=exp.substring(0,exp.length-1);
+	}
+</script>
+<style>
+.bg{
+background-color:"cyan";
+height=100%
+}
+.button{
+width:50;
+height:5-;
+font-size:25;
+margin:2;
+cursor:pointer;
+background-color:#6B7ED3;
+}
+.main{
+position:absolute;
+top:50%;
+left:50%;
+transform:translateX(-50%)translateY(-50%)
+}
+.textview{
+margin:5;
+width:230;
+font-size:25;
+padding:5;
+color:#607d8b;
+}
+h1 { color:#C70039; }
+</style>
+<head>
+<body bgcolor="15AEAC">
+
+<br>
+<br>
+	<h1 align="center" color="red">my Personal calculator</h1>
+	
+	<div class="main">
+<form name="form">
+	<input class="textview" name="textview">
+
+<table >
+	<tr>
+		<td><input class="button" type="button" value="C" onclick="clean()"></td>
+		<td><input class="button" type="button" value="<" onclick="back()"></td>
+		<td><input class="button" type="button" value="/" onclick="form.textview.value+='/'"></td>
+		<td><input class="button" type="button" value="*" onclick="form.textview.value+='*' "></td>
+	</tr>
+	<tr>
+		<td><input class="button" type="button" value="7"  onclick="form.textview.value+='7'"></td>
+		<td><input class="button" type="button" value="8"  onclick="form.textview.value+='8'"></td>
+		<td><input class="button" type="button" value="9" onclick="form.textview.value+='9'"></td>
+		<td><input class="button" type="button" value="-" onclick="form.textview.value+='-'"></td>
+	</tr>
+	<tr>
+		<td><input class="button" type="button" value="4" onclick="form.textview.value+='4'"></td>
+		<td><input class="button" type="button" value="5" onclick="form.textview.value+='5'"></td>
+		<td><input class="button" type="button" value="6" onclick="form.textview.value+='6'"></td>
+		<td><input class="button" type="button" value="+" onclick="form.textview.value+='+'"></td>
+	</tr>
+	<tr>
+		<td><input class="button" type="button" value="1"  onclick="form.textview.value+='1'"></td>
+		<td><input class="button" type="button" value="2" onclick="form.textview.value+='2'"></td>
+		<td><input class="button" type="button" value="3" onclick="form.textview.value+='3'"></td>
+		<td rowspan=5><input class="button"  style="height:90" type="button" value="=" onclick="equal()"></td>
+	</tr>
+	<tr>
+		<td colspan=2><input class="button" style="width:106" type="button" value="0" onclick="form.textview.value+='0'" ></td>
+		<td><input class="button" type="button" value="." onclick="form.textview.value+='.'" ></td>
+	</tr>
+</table>
+</form>
+</div>
+
+</body>
+</html>
